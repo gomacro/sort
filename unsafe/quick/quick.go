@@ -3,13 +3,10 @@ package quick
 import (
 	"reflect"
 	"unsafe"
-	// FIXME: use quick here
-	//	insertion64	"example.com/repo.git/sort/64/insertion"
+
 	quick32 "example.com/repo.git/sort/32/quick"
+	quick64 "example.com/repo.git/sort/64/quick"
 	quick8 "example.com/repo.git/sort/8/quick"
-	//	insertion64	"example.com/repo.git/sort/64/insertion"
-	//	insertion32	"example.com/repo.git/sort/32/insertion"
-	//	insertion8	"example.com/repo.git/sort/8/insertion"
 )
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -69,13 +66,13 @@ func u64(slice interface{}, size uintptr) (src []uint64) {
 
 func Sort(s interface{}, compar interface{}) {
 	size := elemsize(s) //8,4,1
-	/*
-		if (size & 7) == 0 {	// use 8 (64bit)
-			var m = [1]uintptr{size/8}
-			insertion64.Sort(&m, u64(s, m[0]), arg64(compar))
-			return
-		}
-	*/
+
+	if (size & 7) == 0 { // use 8 (64bit)
+		var m = [1]uintptr{size / 8}
+		quick64.Sort(&m, u64(s, m[0]), arg64(compar))
+		return
+	}
+
 	if (size & 3) == 0 { // use 4 (32bit)
 		var m = [1]uintptr{size / 4}
 		quick32.Sort(&m, u32(s, m[0]), arg32(compar))
