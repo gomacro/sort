@@ -1,3 +1,5 @@
+// Copyright 2009 The Go Authors. All rights reserved.
+
 package insertion
 
 func Sort(ts0 *[1]uintptr, compar func(*uint64, *uint64) int, s []uint64) {

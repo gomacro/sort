@@ -1,3 +1,7 @@
+// Copyright 2015 The GOMACRO Authors. All rights reserved.
+// Use of this source code is governed by a GPLv2-style
+// license that can be found in the LICENSE file.
+
 package sort_test
 
 import (
@@ -35,7 +39,7 @@ func fillu(data []int64, seed *[2]uint64) {
 
 const debug = true
 const shortdatasize = 100
-const datasize = 1000
+const datasize = 10000000
 
 func BenchmarkSortLarge_Random(b *testing.B) {
 	b.StopTimer()
