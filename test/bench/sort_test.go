@@ -1,9 +1,9 @@
 package sort_test
 
 import (
-	"example.com/repo.git/sort/compare"
-	"example.com/repo.git/sort/unsafe/quick"
 	"fmt"
+	"github.com/gomacro/sort/compare"
+	"github.com/gomacro/sort/unsafe/quick"
 	"sort"
 	"testing"
 )

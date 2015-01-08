@@ -1,7 +1,7 @@
 package quick
 
 import (
-	insertion32 "example.com/repo.git/sort/32/insertion"
+	insertion32 "github.com/gomacro/sort/32/insertion"
 )
 
 type Quick struct {

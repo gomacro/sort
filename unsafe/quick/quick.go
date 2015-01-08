@@ -4,9 +4,9 @@ import (
 	"reflect"
 	"unsafe"
 
-	quick32 "example.com/repo.git/sort/32/quick"
-	quick64 "example.com/repo.git/sort/64/quick"
-	quick8 "example.com/repo.git/sort/8/quick"
+	quick32 "github.com/gomacro/sort/32/quick"
+	quick64 "github.com/gomacro/sort/64/quick"
+	quick8 "github.com/gomacro/sort/8/quick"
 )
 
 ////////////////////////////////////////////////////////////////////////////////

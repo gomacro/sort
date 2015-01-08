@@ -1,7 +1,7 @@
 package quick
 
 import (
-	insertion8 "example.com/repo.git/sort/8/insertion"
+	insertion8 "github.com/gomacro/sort/8/insertion"
 )
 
 type Quick struct {
