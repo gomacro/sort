@@ -58,7 +58,7 @@ func swapRange(ts0 *[1]uintptr, data []uint64, a, b, n int) {
 	}
 }
 
-func doPivot(ts0 *[1]uintptr, data []uint64, compar func(*uint64, *uint64) int) (midlo, midhi int) {
+func doPivot(ts0 *[1]uintptr, compar func(*uint64, *uint64) int, data []uint64) (midlo, midhi int) {
 	incr := int((*ts0)[0])
 
 	lo := 0

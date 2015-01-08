@@ -92,7 +92,7 @@ func BenchmarkMySortLarge_Random(b *testing.B) {
 
 		b.StartTimer()
 
-		quick.Sort(data, compare.Int64)
+		quick.Sort(compare.Int64, data)
 
 		b.StopTimer()
 

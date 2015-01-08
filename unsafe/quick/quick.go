@@ -64,22 +64,22 @@ func u64(slice interface{}, size uintptr) (src []uint64) {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-func Sort(s interface{}, compar interface{}) {
+func Sort(compar interface{}, s interface{}) {
 	size := elemsize(s) //8,4,1
 
 	if (size & 7) == 0 { // use 8 (64bit)
 		var m = [1]uintptr{size / 8}
-		quick64.Sort(&m, u64(s, m[0]), arg64(compar))
+		quick64.Sort(&m, arg64(compar), u64(s, m[0]))
 		return
 	}
 
 	if (size & 3) == 0 { // use 4 (32bit)
 		var m = [1]uintptr{size / 4}
-		quick32.Sort(&m, u32(s, m[0]), arg32(compar))
+		quick32.Sort(&m, arg32(compar), u32(s, m[0]))
 		return
 	}
 
 	// use 1 (8bit)
 	var m = [1]uintptr{size}
-	quick8.Sort(&m, u8(s, m[0]), arg8(compar))
+	quick8.Sort(&m, arg8(compar), u8(s, m[0]))
 }

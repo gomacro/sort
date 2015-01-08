@@ -1,6 +1,6 @@
 package insertion
 
-func Sort(ts0 *[1]uintptr, s []uint8, compar func(*uint8, *uint8) int) {
+func Sort(ts0 *[1]uintptr, compar func(*uint8, *uint8) int, s []uint8) {
 	incr := int((*ts0)[0])
 
 	for i := len(s) - incr; i > 0; i -= incr {
