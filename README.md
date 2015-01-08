@@ -36,3 +36,5 @@ N/A
 Adapted from go std sort.
 
 The unsafe/, test/, compare/ is GPLv2
+
+Version: v0.1
