@@ -17,28 +17,31 @@ import (
 func elemsize(slice interface{}) uintptr {
 	return uintptr(reflect.TypeOf(slice).Elem().Size())
 }
+func mvetype(dst, src *interface{}) {
+	*(*uintptr)(unsafe.Pointer(dst)) = *(*uintptr)(unsafe.Pointer(src))
+}
 func arg8(fun interface{}) (dst func(*uint8, *uint8) int) {
 	var ction interface{}
 	ction = dst
-	*(*uintptr)(unsafe.Pointer(&fun)) = *(*uintptr)(unsafe.Pointer(&ction))
+	mvetype(&fun, &ction)
 	return fun.(func(*uint8, *uint8) int)
 }
 func arg32(fun interface{}) (dst func(*uint32, *uint32) int) {
 	var ction interface{}
 	ction = dst
-	*(*uintptr)(unsafe.Pointer(&fun)) = *(*uintptr)(unsafe.Pointer(&ction))
+	mvetype(&fun, &ction)
 	return fun.(func(*uint32, *uint32) int)
 }
 func arg64(fun interface{}) (dst func(*uint64, *uint64) int) {
 	var ction interface{}
 	ction = dst
-	*(*uintptr)(unsafe.Pointer(&fun)) = *(*uintptr)(unsafe.Pointer(&ction))
+	mvetype(&fun, &ction)
 	return fun.(func(*uint64, *uint64) int)
 }
 func u8(slice interface{}, size uintptr) (src []uint8) {
 	var dst interface{}
 	dst = src
-	*(*uintptr)(unsafe.Pointer(&slice)) = *(*uintptr)(unsafe.Pointer(&dst))
+	mvetype(&slice, &dst)
 	src = slice.([]uint8)
 	h := (*reflect.SliceHeader)(unsafe.Pointer(&src))
 	h.Len *= int(size)
@@ -48,7 +51,7 @@ func u8(slice interface{}, size uintptr) (src []uint8) {
 func u32(slice interface{}, size uintptr) (src []uint32) {
 	var dst interface{}
 	dst = src
-	*(*uintptr)(unsafe.Pointer(&slice)) = *(*uintptr)(unsafe.Pointer(&dst))
+	mvetype(&slice, &dst)
 	src = slice.([]uint32)
 	h := (*reflect.SliceHeader)(unsafe.Pointer(&src))
 	h.Len *= int(size)
@@ -58,7 +61,7 @@ func u32(slice interface{}, size uintptr) (src []uint32) {
 func u64(slice interface{}, size uintptr) (src []uint64) {
 	var dst interface{}
 	dst = src
-	*(*uintptr)(unsafe.Pointer(&slice)) = *(*uintptr)(unsafe.Pointer(&dst))
+	mvetype(&slice, &dst)
 	src = slice.([]uint64)
 	h := (*reflect.SliceHeader)(unsafe.Pointer(&src))
 	h.Len *= int(size)
