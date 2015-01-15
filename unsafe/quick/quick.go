@@ -2,6 +2,7 @@
 // Use of this source code is governed by a GPLv2-style
 // license that can be found in the LICENSE file.
 
+// Package quick provides a quick.Sort() for slices.
 package quick
 
 import (
@@ -71,7 +72,11 @@ func u64(slice interface{}, size uintptr) (src []uint64) {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-func Sort(compar interface{}, s interface{}) {
+// Sort sorts a slice. The compar is the Compare function.
+// The slice is the slice to be sorted in-place.
+// The sort is not guaranteed to be stable.
+func Sort(compar, slice interface{}) {
+	s := slice
 	size := elemsize(s) //8,4,1
 
 	if (size & 7) == 0 { // use 8 (64bit)
