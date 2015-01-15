@@ -6,7 +6,7 @@ package sort_test
 
 import (
 	"fmt"
-	"github.com/gomacro/sort/compare"
+	"github.com/gomacro/compare"
 	"github.com/gomacro/sort/unsafe/quick"
 	"sort"
 	"testing"
