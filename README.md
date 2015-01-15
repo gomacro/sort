@@ -16,11 +16,10 @@ N        | Std sort | Gomacro sort
 
 # Go get
 
-  go get github.com/gomacro/sort/unsafe/quick
+	go get github.com/gomacro/sort/unsafe/quick
 
 # Import
 
-	"github.com/gomacro/sort/compare"
 	"github.com/gomacro/sort/unsafe/quick"
 
 # Example
@@ -35,6 +34,6 @@ N/A
 
 Adapted from go std sort.
 
-The unsafe/, test/, compare/ is GPLv2
+The unsafe/, test/ is GPLv2
 
 Version: v0.1
