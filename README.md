@@ -26,4 +26,4 @@ Adapted from go std sort.
 
 The unsafe/, test/ is GPLv2
 
-Version: v0.1
+Version: v0.2
