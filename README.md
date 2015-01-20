@@ -4,6 +4,10 @@
 
 A sorting algorithm for slices.
 
+# Install
+	go get github.com/gomacro/sort/unsafe/quick
+	"github.com/gomacro/sort/unsafe/quick"
+
 # Benchmark
 
 N        | Std sort | Gomacro sort 
@@ -15,10 +19,6 @@ N        | Std sort | Gomacro sort
 100000 | 40125309 | 24780259 
 1000000 | 482527863 | 293896621 
 10000000 | 5697779309 | 3452470132 
-
-# Install
-	go get github.com/gomacro/sort/unsafe/quick
-	"github.com/gomacro/sort/unsafe/quick"
 
 # License
 
