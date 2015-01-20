@@ -1,5 +1,7 @@
 # quick.Sort(compar, slice)
 
+[![GoDoc](https://godoc.org/github.com/gomacro/sort/unsafe/quick?status.svg)](https://godoc.org/github.com/gomacro/sort/unsafe/quick)
+
 A sorting algorithm for slices.
 
 # Benchmark
@@ -14,21 +16,9 @@ N        | Std sort | Gomacro sort
 1000000 | 482527863 | 293896621 
 10000000 | 5697779309 | 3452470132 
 
-# Go get
-
+# Install
 	go get github.com/gomacro/sort/unsafe/quick
-
-# Import
-
 	"github.com/gomacro/sort/unsafe/quick"
-
-# Example
-
-N/A
-
-# Docs
-
-N/A
 
 # License
 
