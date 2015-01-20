@@ -1,5 +1,6 @@
 // Copyright 2009 The Go Authors. All rights reserved.
 
+// Package quick is a 32-bit macro function, callable from a third-party macros.
 package quick
 
 import (

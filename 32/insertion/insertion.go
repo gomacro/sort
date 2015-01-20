@@ -1,5 +1,6 @@
 // Copyright 2009 The Go Authors. All rights reserved.
 
+// Package insertion is a 32-bit macro function, callable from a third-party macros.
 package insertion
 
 func Sort(ts0 *[1]uintptr, compar func(*uint32, *uint32) int, s []uint32) {
